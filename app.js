@@ -33,6 +33,16 @@ socketIO.on('connection', function(socket) {
         socketIO.sockets.emit('color_change', {r:255, g:0, b:0});
     });
 
+    socket.on('orange', function(data) {
+        console.log('orange event heard');
+        socketIO.sockets.emit('color_change', {r:255, g:165, b:0});
+    });
+
+    socket.on('yellow', function(data) {
+        console.log('yellow event heard');
+        socketIO.sockets.emit('color_change', {r:255, g:255, b:0});
+    });
+
     socket.on('green', function(data) {
         console.log('green event heard');
         socketIO.sockets.emit('color_change', {r:0, g:255, b:0});
@@ -41,6 +51,11 @@ socketIO.on('connection', function(socket) {
     socket.on('blue', function(data) {
         console.log('blue event heard');
         socketIO.sockets.emit('color_change', {r:0, g:0, b:255});
+    });
+
+    socket.on('purple', function(data) {
+        console.log('purple event heard');
+        socketIO.sockets.emit('color_change', {r:128, g:0, b:128});
     });
 });
 

@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+            <script src="/js/aframe.min.js"></script>
     </head>
     <body>
         <h1>This is the controller client</h1>
 
         <!-- some very nice color buttons -->
         <button id="red" style="background-color:red; color:whitesmoke;">RED</button>
-        <button id="green" style="background-color:green; color:whitesmoke;">BLUE</button>
-        <button id="blue" style="background-color:blue; color:whitesmoke;">GREEN</button>
+        <button id="orange" style="background-color:orange; color:whitesmoke;">ORANGE</button>
+        <button id="yellow" style="background-color:yellow; color:whitesmoke;">YELLOW</button>
+        <button id="green" style="background-color:green; color:whitesmoke;">GREEN</button>
+        <button id="blue" style="background-color:blue; color:whitesmoke;">BLUE</button>
+        <button id="purple" style="background-color:purple; color:whitesmoke;">PURPLE</button>
 
         <!-- scripts go to bottom if you want them to execute AFTER the rest of the web page renders -->
         <script src="/socket.io/socket.io.js"></script>
@@ -32,6 +36,14 @@
                 socket.emit('red');
             });
 
+            document.querySelector('#orange').addEventListener('click', function() {
+                socket.emit('orange');
+            });
+
+            document.querySelector('#yellow').addEventListener('click', function() {
+                socket.emit('yellow');
+            });
+
             document.querySelector('#green').addEventListener('click', function() {
                 socket.emit('green');
             });
@@ -39,6 +51,17 @@
             document.querySelector('#blue').addEventListener('click', function() {
                 socket.emit('blue');
             });
+
+             document.querySelector('#purple').addEventListener('click', function() {
+                socket.emit('purple');
+            });
+
         </script>
+
+        <a-scene>
+            <a-torus colour= "hotpink" radius = "2"></a-torus>
+             <!--<a-entity geometry="primitive: ring; radiusInner: 0.5; radiusOuter: 1" material="side: double"></a-entity>-->
+        </a-scene>
+      
     </body>
 </html>
