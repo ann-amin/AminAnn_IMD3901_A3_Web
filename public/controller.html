@@ -4,7 +4,7 @@
             <script src="/js/aframe.min.js"></script>
     </head>
     <body>
-        <h1>This is the controller client</h1>
+        <h1>Player 1</h1>
 
         <!-- some very nice color buttons -->
         <button id="red" style="background-color:red; color:whitesmoke;">RED</button>
@@ -24,6 +24,7 @@
                 console.log("connected!");
             });
 
+        
             //let's send some events to the server to pass on. Programmatic telephone game!
             //querySelector() is a more modern and versatile function of getElementById()
             //#name or class
@@ -58,10 +59,9 @@
 
         </script>
 
-        <a-scene>
-            <a-torus colour= "hotpink" radius = "2"></a-torus>
-             <!--<a-entity geometry="primitive: ring; radiusInner: 0.5; radiusOuter: 1" material="side: double"></a-entity>-->
-        </a-scene>
-      
+        <!-- <a-scene>
+            <a-torus id="Red_Torus" color= "red" radius = "2"  position = "0 0 -10"></a-torus>
+            <a-entity geometry="primitive: ring; radiusInner: 0.5; radiusOuter: 1" material="side: double"></a-entity>
+        </a-scene>        -->
     </body>
 </html>

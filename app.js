@@ -30,32 +30,32 @@ socketIO.on('connection', function(socket) {
     //socketIO.sockets = all clients
     socket.on('red', function(data) {
         console.log('red event heard');
-        socketIO.sockets.emit('color_change', {r:255, g:0, b:0});
+        socketIO.sockets.emit('red', {r:255, g:0, b:0});
     });
 
     socket.on('orange', function(data) {
         console.log('orange event heard');
-        socketIO.sockets.emit('color_change', {r:255, g:165, b:0});
+        socketIO.sockets.emit('orange', {r:255, g:165, b:0});
     });
 
     socket.on('yellow', function(data) {
         console.log('yellow event heard');
-        socketIO.sockets.emit('color_change', {r:255, g:255, b:0});
+        socketIO.sockets.emit('yellow', {r:255, g:255, b:0});
     });
 
     socket.on('green', function(data) {
         console.log('green event heard');
-        socketIO.sockets.emit('color_change', {r:0, g:255, b:0});
+        socketIO.sockets.emit('green', {r:0, g:255, b:0});
     });
 
     socket.on('blue', function(data) {
         console.log('blue event heard');
-        socketIO.sockets.emit('color_change', {r:0, g:0, b:255});
+        socketIO.sockets.emit('blue', {r:0, g:0, b:255});
     });
 
     socket.on('purple', function(data) {
         console.log('purple event heard');
-        socketIO.sockets.emit('color_change', {r:128, g:0, b:128});
+        socketIO.sockets.emit('purple', {r:128, g:0, b:128});
     });
 });
 
