@@ -57,6 +57,19 @@ socketIO.on('connection', function(socket) {
         console.log('purple event heard');
         socketIO.sockets.emit('purple', {r:128, g:0, b:128});
     });
+
+     // passing 1 to the delete target function in controller
+    socket.on('remove', function(data) {  
+        console.log('player has hit the target');
+        socketIO.sockets.emit('addPoints', 1);
+        
+    });
+
+    socket.on('end', function(data) {
+        console.log('end event heard');
+        socketIO.sockets.emit('end', {r:255, g:0, b:0});
+    });
+
 });
 
 //finally, start server

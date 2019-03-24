@@ -27,11 +27,24 @@
             <a-entity id="sky" 
             geometry = "primitive:sphere; radius: 500;"
             material="shader:flat; src:#BG; side:back; height:2048; width:2048" ></a-entity>
-        </a-scene>
+       
+
+    
+    <a-entity end-me-please id="red-button" geometry="primitive: box" material="color: red" position="-0.5 7 0"></a-entity>
+    </a-scene>
+    
+    <script>
+        document.querySelector('#red-button').addEventListener('click', function() {
+
+        }); 
+    </script>
     
         <script src="/socket.io/socket.io.js"></script>
         <script>
             
+        
+
+
             let socket = io();
     
             //default connect event
@@ -43,15 +56,15 @@
                 let colorStr = 'rbg(' + data.r + ','+data.g + ', '+ data.b + ')';
                 console.log('color change event: ' + colorStr);
                 
-                let fakeTarget = document.createElement('a-torus');
-                fakeTarget.setAttribute('id', "red");
-                fakeTarget.setAttribute('material', {color: "red"});
-                fakeTarget.setAttribute('position', {x:0, y:0, z:-12});
-                fakeTarget.setAttribute('radius', {radius:2});
-                fakeTarget.setAttribute('scale', {x:5, y:5, z:5});
-                fakeTarget.setAttribute('delete', {});
+                let Create = document.createElement('a-torus');
+                Create.setAttribute('id', "red");
+                Create.setAttribute('material', {color: "red"});
+                Create.setAttribute('position', {x:0, y:0, z:-12});
+                Create.setAttribute('radius', {radius:2});
+                Create.setAttribute('scale', {x:5, y:5, z:5});
+                Create.setAttribute('delete', {});
                 let scene = document.querySelector('a-scene');
-                scene.appendChild(fakeTarget);
+                scene.appendChild(Create);
 
             });
 
@@ -60,85 +73,83 @@
                 let colorStr = 'rbg(' + data.r + ','+data.g + ', '+ data.b + ')';
                 console.log('color change event: ' + colorStr);
                 
-                let fakeTarget = document.createElement('a-torus');
-                fakeTarget.setAttribute('id', "orange");
-                fakeTarget.setAttribute('material', {color: "orange"});
-                fakeTarget.setAttribute('position', {x:0, y:0, z:-12});
-                fakeTarget.setAttribute('radius', {radius:2});
-                fakeTarget.setAttribute('scale', {x:4, y:4, z:4});
-                fakeTarget.setAttribute('delete', {});
+                let Create = document.createElement('a-torus');
+                Create.setAttribute('id', "orange");
+                Create.setAttribute('material', {color: "orange"});
+                Create.setAttribute('position', {x:0, y:0, z:-12});
+                Create.setAttribute('radius', {radius:2});
+                Create.setAttribute('scale', {x:4, y:4, z:4});
+                Create.setAttribute('delete', {});
                 let scene = document.querySelector('a-scene');
-                scene.appendChild(fakeTarget);
+                scene.appendChild(Create);
             });
 
             // yellow torus
             socket.on('yellow', function(data) {
-                let colorStr = 'rbg(' + data.r + ','+data.g + ', '+ data.b + ')';
+                let colorStr = 'rbg(' + data.r + ','+ data.g + ', '+ data.b + ')';
                 console.log('color change event: ' + colorStr);
                 
-                let fakeTarget = document.createElement('a-torus');
-                fakeTarget.setAttribute('id', "yellow");
-                fakeTarget.setAttribute('material', {color: "yellow"});
-                fakeTarget.setAttribute('position', {x:0, y:0, z:-12});
-                fakeTarget.setAttribute('radius', {radius:2});
-                fakeTarget.setAttribute('scale', {x:3, y:3, z:3});
-                fakeTarget.setAttribute('delete', {});
+                let Create = document.createElement('a-torus');
+                Create.setAttribute('id', "yellow");
+                Create.setAttribute('material', {color: "yellow"});
+                Create.setAttribute('position', {x:0, y:0, z:-12});
+                Create.setAttribute('radius', {radius:2});
+                Create.setAttribute('scale', {x:3, y:3, z:3});
+                Create.setAttribute('delete', {});
                 let scene = document.querySelector('a-scene');
-                scene.appendChild(fakeTarget);
+                scene.appendChild(Create);
             });
 
             // green torus
             socket.on('green', function(data) {
-                let colorStr = 'rbg(' + data.r + ','+data.g + ', '+ data.b + ')';
+                let colorStr = 'rbg(' + data.r + ','+ data.g + ', '+ data.b + ')';
                 console.log('color change event: ' + colorStr);
                 
-                let fakeTarget = document.createElement('a-torus');
-                fakeTarget.setAttribute('id', "green");
-                fakeTarget.setAttribute('material', {color: "green"});
-                fakeTarget.setAttribute('position', {x:0, y:0, z:-12});
-                fakeTarget.setAttribute('radius', {radius:2});
-                fakeTarget.setAttribute('scale', {x:2, y:2, z:2});
-                fakeTarget.setAttribute('delete', {});
+                let Create = document.createElement('a-torus');
+                Create.setAttribute('id', "green");
+                Create.setAttribute('material', {color: "green"});
+                Create.setAttribute('position', {x:0, y:0, z:-12});
+                Create.setAttribute('radius', {radius:2});
+                Create.setAttribute('scale', {x:2, y:2, z:2});
+                Create.setAttribute('delete', {});
                 let scene = document.querySelector('a-scene');
-                scene.appendChild(fakeTarget);
+                scene.appendChild(Create);
             });
 
             // blue torus
             socket.on('blue', function(data) {
-                let colorStr = 'rbg(' + data.r + ','+data.g + ', '+ data.b + ')';
+                let colorStr = 'rbg(' + data.r + ','+ data.g + ', '+ data.b + ')';
                 console.log('color change event: ' + colorStr);
                 
-                let fakeTarget = document.createElement('a-torus');
-                fakeTarget.setAttribute('id', "blue");
-                fakeTarget.setAttribute('material', {color: "blue"});
-                fakeTarget.setAttribute('position', {x:0, y:0, z:-12});
-                fakeTarget.setAttribute('radius', {radius:2});
-                fakeTarget.setAttribute('scale', {x:1, y:1, z:1});
-                fakeTarget.setAttribute('delete', {});
+                let Create = document.createElement('a-torus');
+                Create.setAttribute('id', "blue");
+                Create.setAttribute('material', {color: "blue"});
+                Create.setAttribute('position', {x:0, y:0, z:-12});
+                Create.setAttribute('radius', {radius:2});
+                Create.setAttribute('scale', {x:1, y:1, z:1});
+                Create.setAttribute('delete', {});
                 let scene = document.querySelector('a-scene');
-                scene.appendChild(fakeTarget);
+                scene.appendChild(Create);
             });
 
             //purple torus
             socket.on('purple', function(data) {
-                let colorStr = 'rbg(' + data.r + ','+data.g + ', '+ data.b + ')';
+                let colorStr = 'rbg(' + data.r + ','+ data.g + ', '+ data.b + ')';
                 console.log('color change event: ' + colorStr);
                 
-                let fakeTarget = document.createElement('a-torus');
-                fakeTarget.setAttribute('id', "purple");
-                fakeTarget.setAttribute('material', {color: "purple"});
-                fakeTarget.setAttribute('position', {x:0, y:0, z:-12});
-                fakeTarget.setAttribute('radius', {radius:2});
-                fakeTarget.setAttribute('scale', {x:0.5, y:0.5, z:0.5});
-                fakeTarget.setAttribute('delete', {});
+                let Create = document.createElement('a-torus');
+                Create.setAttribute('id', "purple");
+                Create.setAttribute('material', {color: "purple"});
+                Create.setAttribute('position', {x:0, y:0, z:-12});
+                Create.setAttribute('radius', {radius:2});
+                Create.setAttribute('scale', {x:0.5, y:0.5, z:0.5});
+                Create.setAttribute('delete', {});
                 let scene = document.querySelector('a-scene');
-                scene.appendChild(fakeTarget);
+                scene.appendChild(Create);
             });
 
-
-
-            //deleting when clicking to create competition 
-            AFRAME.registerComponent('deletecomponent', {
+            socket.on('end', function(data) {
+            AFRAME.registerComponent('end-me-please', {
             schema: {},
             init : function() {
                 const Context_AF = this;
@@ -146,18 +157,19 @@
                 Context_AF.el.addEventListener('click', function(event) {
                     console.log("click");
                     //object clicked - lets create a cow!
-                    Context_AF.deleteMyself();
+                    Context_AF.end();
                 
                 });
             },
-            deleteMyself : function() {
+            end : function() {
                 const Context_AF = this;
-                Context_AF.el.parentNode.removeChild(Context_AF.el); 
-                socket.emit('removeTorus');
-                
-            }
+               location.assign("end.html");
+               let scene = document.querySelector('a-scene');
+            },
            
             });
+        });
+
             AFRAME.registerComponent('delete', {
             schema: {},
             init : function() {
